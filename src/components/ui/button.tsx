@@ -10,6 +10,9 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+        lime: "bg-[image:var(--lime-gradient)] text-primary-foreground rounded-full font-semibold hover:brightness-105",
+        forest: "bg-forest text-bone rounded-full font-semibold hover:opacity-90",
+        heroGhost: "text-bone hover:bg-bone/10",
         destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
           "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
