@@ -40,7 +40,7 @@ a {text-decoration:none;} button {font-family:inherit;}
 .brand {font-size:23px;font-weight:800;display:inline-flex;align-items:center;gap:10px;white-space:nowrap;}
 .brand-green {color:var(--lime);}.brand-mark {display:grid;place-items:center;width:34px;height:34px;background:var(--lime-gradient);color:var(--forest);border-radius:50%;}
 .nav {display:flex;gap:28px;font-size:13px;font-weight:600;padding:11px 26px;border-radius:30px;background:color-mix(in oklab,var(--forest) 46%,transparent);border:1px solid color-mix(in oklab,var(--bone) 18%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 6px 20px color-mix(in oklab,var(--forest) 28%,transparent);transition:background .35s;}.nav a {opacity:.95;text-shadow:0 1px 10px color-mix(in oklab,var(--forest) 60%,transparent);transition:opacity .2s,color .2s;}.nav a:hover{opacity:1;color:var(--lime);}
-.header-actions {display:flex;align-items:center;gap:20px;}.header-note{font-size:11px;opacity:.7;}.mobile-menu{display:none;}
+.header-actions {display:flex;align-items:center;gap:20px;}.header-note{font-size:11px;opacity:.7;text-shadow:0 1px 8px color-mix(in oklab,var(--forest) 65%,transparent);}.mobile-menu{display:none;}
 .hero {position:relative;color:var(--bone);min-height:770px;height:calc(100svh - 45px);max-height:1050px;overflow:hidden;}
 .hero-photo {position:absolute;width:100%;height:100%;object-fit:cover;object-position:center;}
 .hero::after {content:'';position:absolute;inset:0;background:var(--hero-veil);}
