@@ -43,7 +43,6 @@ a {text-decoration:none;} button {font-family:inherit;}
 .header-actions {display:flex;align-items:center;gap:20px;}.header-note{font-size:11px;opacity:.7;text-shadow:0 1px 8px color-mix(in oklab,var(--forest) 65%,transparent);}.mobile-menu{display:none;}
 .hero {position:relative;color:var(--bone);min-height:770px;height:calc(100svh - 45px);max-height:1050px;overflow:hidden;}
 .hero-photo {position:absolute;width:100%;height:100%;object-fit:cover;object-position:center;}
-.hero::after {content:'';position:absolute;inset:0;background:var(--hero-veil);}
 .hero-content {position:relative;z-index:2;height:100%;padding-top:190px;display:flex;flex-direction:column;justify-content:center;padding-bottom:85px;}
 .eyebrow {font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:2px;}.hero-tag {border:1px solid color-mix(in oklab,var(--bone) 24%,transparent);border-radius:30px;background:color-mix(in oklab,var(--forest) 20%,transparent);padding:5px 12px;align-self:flex-start;margin-bottom:25px;display:flex;align-items:center;gap:8px;}
 .hero h1 {font-size:94px;line-height:.98;font-weight:800;max-width:850px;margin:0 0 35px;}.hero h1 span{display:block;}.hero h1 .green-word{color:var(--lime);}
@@ -71,7 +70,6 @@ a {text-decoration:none;} button {font-family:inherit;}
 @keyframes vg-float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-10px) } }
 @keyframes vg-pulse-ring { 0% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--lime) 55%, transparent) } 100% { box-shadow: 0 0 0 18px transparent } }
 .hero { position: relative; }
-.hero::before { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1; background-image: linear-gradient(180deg, color-mix(in oklab, var(--forest) 58%, transparent), transparent 160px), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.2'/%3E%3C/svg%3E"); }
 .hero-photo { will-change: transform; }
 .hero-tag { animation: vg-float 5s ease-in-out infinite; }
 .scroll-note svg { animation: vg-float 2.6s ease-in-out infinite; }
