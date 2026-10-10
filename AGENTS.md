@@ -11,7 +11,7 @@
 
 ## Application rules
 - Keep the landscaping home page in the index route, with semantic styling centralized in src/styles.css; this preserves the reference layout consistently.
-- Import real downloaded photographs through Lovable asset pointers; this keeps media delivery stable without storing large binaries in source.
+- Keep photographs as regular imported files under src/assets (no Lovable asset pointers); this keeps images working when the site is self-hosted outside Lovable, e.g. on Vercel.
 - Until real business details and enquiry delivery are supplied, label photography as inspiration and download enquiry briefs without claiming bookings or message delivery; this avoids fabricated business claims.
 - Keep motion in Framer Motion with user reduced-motion support and CSS interaction transitions; this preserves accessibility across page and dialog animations.
 - Derive the favicon from the same generated logo used in the header and footer; this keeps brand assets consistent.
