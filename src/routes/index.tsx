@@ -4,11 +4,11 @@ import { ArrowDown, ArrowDownRight, ArrowUpRight, Check, CheckCircle2, ChevronRi
 import { Button } from '@/components/ui/button'
 import { AnimatePresence, MotionConfig, motion, useReducedMotion, useScroll, useSpring, useTransform } from 'framer-motion'
 import verygreenLogo from '@/assets/verygreen-logo-leaves.png'
-import heroGarden from '@/assets/hero-garden.jpg.asset.json'
-import lawnPhoto from '@/assets/hero.jpg.asset.json'
-import gardenPhoto from '@/assets/patio.jpg.asset.json'
-import carePhoto from '@/assets/garden.jpg.asset.json'
-import plantingPhoto from '@/assets/path.jpg.asset.json'
+import heroGarden from '@/assets/hero-garden.jpg'
+import lawnPhoto from '@/assets/hero.jpg'
+import gardenPhoto from '@/assets/patio.jpg'
+import carePhoto from '@/assets/garden.jpg'
+import plantingPhoto from '@/assets/path.jpg'
 
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
@@ -18,8 +18,8 @@ export const Route = createFileRoute('/')({
     { property: 'og:description', content: 'Good gardens start with a thoughtful plan. Discover practical landscaping services, real garden photography and seasonal care.' },
     { property: 'og:type', content: 'website' },
     { name: 'twitter:card', content: 'summary_large_image' },
-    { property: 'og:image', content: heroGarden.url },
-    { name: 'twitter:image', content: heroGarden.url },
+    { property: 'og:image', content: heroGarden },
+    { name: 'twitter:image', content: heroGarden },
   ] }),
   component: Index,
 })
@@ -56,7 +56,7 @@ function HeroPhoto() {
   const smoothScroll = useSpring(scrollY, { stiffness: 80, damping: 30, restDelta: 0.5 })
   const y = useTransform(smoothScroll, [0, 900], [0, 160])
   const scale = useTransform(smoothScroll, [0, 900], [1.06, 1.14])
-  return <motion.img className="hero-photo" src={heroGarden.url} alt="Manicured emerald lawn and sculpted hedges at golden hour" fetchPriority="high" style={{ y: reducedMotion ? 0 : y, scale: reducedMotion ? 1 : scale }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4 }} />
+  return <motion.img className="hero-photo" src={heroGarden} alt="Manicured emerald lawn and sculpted hedges at golden hour" fetchPriority="high" style={{ y: reducedMotion ? 0 : y, scale: reducedMotion ? 1 : scale }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4 }} />
 }
 function Brand() { return <a href="#top" className="brand" aria-label="VeryGreen home"><span className="brand-mark"><img src={verygreenLogo} alt="" width={1024} height={1024} /></span><span>Very<span className="brand-green">Green</span></span></a> }
 
@@ -70,7 +70,7 @@ function Index() {
     <ScrollProgress /><section className="hero" aria-labelledby="hero-title"><HeroPhoto /><div className="shell hero-content"><div className="eyebrow hero-tag"><Sprout size={12} /> Landscape design · Build · Care</div><h1 id="hero-title">{["Gardens","that stay","impossibly","green."].map((w,i)=><span key={w} className="hero-line"><motion.span className={i===3?"green-word block":"block"} initial={{y:"110%"}} animate={{y:0}} transition={{duration:1.1,delay:0.15+i*0.12,ease:[0.16,1,0.3,1]}}>{w}</motion.span></span>)}</h1><div className="hero-bottom"><p>Thoughtful design, careful planting and dependable maintenance. Outdoor spaces made for real life — from your first morning coffee to the last light of summer.</p><div className="hero-cta"><Button variant="lime" className="h-14 px-8 text-xs" onClick={() => requestEstimate()}>Book a walkthrough <ArrowDownRight size={15} /></Button><span className="hero-assurance"><Leaf size={15} /> Good gardens. Grounded in care.</span></div></div><a href="#services" className="scroll-note">SCROLL <ArrowDown size={12} /></a></div></section>
     <div className="ticker" aria-hidden="true"><div className="ticker-track">{[0,1].map(n => <span key={n}>{['Lawn care','Hardscaping','Garden design','Irrigation','Tree & hedge','Night lighting','Seasonal colour'].map(item => <span key={item}>{item.toUpperCase()}<b>✦</b></span>)}</span>)}</div></div>
     <section id="services" className="section"><div className="shell"><motion.div {...rv} transition={{duration:0.9,ease}} className="section-heading"><h2>Everything<br />outside your<br />front door.</h2><p>One garden, a considered approach. Choose a single service or bring the whole outdoor space together with a complete plan.</p></motion.div><div className="services-grid">{services.map(({icon: Icon, title, description, detail}, index) => <motion.article {...rv} transition={{duration:0.75,delay:(index % 3)*0.08,ease}} className="service-card" key={title}><span className="service-icon"><Icon size={22} strokeWidth={1.6} /></span><h3>{title}</h3><p>{description}</p><div className="service-detail"><span>{detail}</span><Button variant="ghost" size="icon" aria-label={`Enquire about ${title}`} onClick={() => requestEstimate(title)}><ArrowUpRight size={16}/></Button></div></motion.article>)}</div></div></section>
-    <section id="work" className="section work-section"><div className="shell"><div className="eyebrow">The possibilities</div><motion.div {...rv} transition={{duration:0.9,ease}} className="section-heading"><h2>Yards worth<br />slowing down for.</h2><p>Real gardens. Real growing things. A little inspiration for the outdoor space you’ve been imagining.</p></motion.div><div className="work-grid">{projects.map((project, index) => <motion.article {...rvClip} transition={{duration:1.2,delay:(index % 2)*0.12,ease}} className="work-item" key={project.name}><img src={project.photo.url} alt={project.alt} loading="lazy" /><div className="work-caption"><div className="eyebrow">{project.category}</div><h3>{project.name}<Leaf size={19} /></h3></div></motion.article>)}</div><p className="photo-credit">Real photography from Unsplash and Pexels. Images show garden inspiration, not completed VeryGreen projects.</p></div></section>
+    <section id="work" className="section work-section"><div className="shell"><div className="eyebrow">The possibilities</div><motion.div {...rv} transition={{duration:0.9,ease}} className="section-heading"><h2>Yards worth<br />slowing down for.</h2><p>Real gardens. Real growing things. A little inspiration for the outdoor space you’ve been imagining.</p></motion.div><div className="work-grid">{projects.map((project, index) => <motion.article {...rvClip} transition={{duration:1.2,delay:(index % 2)*0.12,ease}} className="work-item" key={project.name}><img src={project.photo} alt={project.alt} loading="lazy" /><div className="work-caption"><div className="eyebrow">{project.category}</div><h3>{project.name}<Leaf size={19} /></h3></div></motion.article>)}</div><p className="photo-credit">Real photography from Unsplash and Pexels. Images show garden inspiration, not completed VeryGreen projects.</p></div></section>
     <section id="process" className="section"><div className="shell process-layout"><div><h2>Four steps.<br />Then life<br />moves outside.</h2><p className="process-intro">Less guesswork. More good mornings in the garden. Here’s how an outdoor space comes together.</p></div><div>{steps.map(([title, description], index) => <motion.article {...rvSide} transition={{duration:0.9,delay:index*0.08,ease}} className="process-step" key={title}><span className="step-number">0{index+1}</span><div><h3>{title}</h3><p>{description}</p></div></motion.article>)}</div></div></section>
     <div className="shell"><div className="facts">{[['01','A plan for your property'],['04','Seasons of considered care'],['100%','Clear scope before work begins'],['Your pace','One service or ongoing care']].map(([number,text]) => <div className="fact" key={number}><div className="fact-number">{number}</div><p>{text}</p></div>)}</div></div>
     <section id="care" className="section care-section"><div className="shell"><motion.div {...rv} transition={{duration:0.9,ease}} className="section-heading"><h2>Good care.<br />Not empty promises.</h2><p>The difference is in the details. Practical decisions that make a garden easier to enjoy, season after season.</p></motion.div><div className="care-grid"><motion.article {...rv} transition={{duration:0.9,ease}} className="care-item"><Droplets size={25}/><h3>Water the roots,<br />not the pavement.</h3><p>Deep, less frequent watering encourages stronger roots. Soil type and weather matter more than a fixed timer.</p></motion.article><motion.article {...rv} transition={{duration:0.9,ease}} className="care-item"><Flower2 size={25}/><h3>Right plant.<br />Right place.</h3><p>Match planting to the light and soil you actually have. Locally suited species need less intervention and support wildlife.</p></motion.article><motion.article {...rv} transition={{duration:0.9,ease}} className="care-item"><Scissors size={25}/><h3>A little often.<br />A lot less worry.</h3><p>Seasonal pruning, sensible mowing heights and regular attention keep small jobs from turning into big ones.</p></motion.article></div></div></section>
