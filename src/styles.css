@@ -96,3 +96,8 @@ button:active { transform: translateY(1px); }
 @media(max-width:700px) { .brand-mark { width: 30px; height: 30px; } .nav.is-open { animation: menu-in .3s var(--motion-ease) both; } }
 @keyframes menu-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+.scroll-progress{position:fixed;top:0;left:0;right:0;height:3px;transform-origin:0 50%;background:linear-gradient(90deg,var(--lime),var(--mint));z-index:100}
+.service-card,.care-item,.work-item{transition:transform .5s var(--motion-ease, cubic-bezier(.16,1,.3,1)),box-shadow .5s}
+.service-card:hover,.care-item:hover{box-shadow:0 24px 50px -24px color-mix(in oklab,var(--forest) 45%,transparent)}
+@media (prefers-reduced-motion: reduce){.scroll-progress{display:none}}
