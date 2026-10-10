@@ -4,11 +4,11 @@ import { ArrowDown, ArrowDownRight, ArrowUpRight, Check, CheckCircle2, ChevronRi
 import { Button } from '@/components/ui/button'
 import { AnimatePresence, MotionConfig, motion, useReducedMotion, useScroll, useSpring, useTransform } from 'framer-motion'
 import verygreenLogo from '@/assets/verygreen-logo-leaves.png'
-import heroGarden from '@/assets/hero-garden.jpg.asset.json'
-import lawnPhoto from '@/assets/hero.jpg.asset.json'
-import gardenPhoto from '@/assets/patio.jpg.asset.json'
-import carePhoto from '@/assets/garden.jpg.asset.json'
-import plantingPhoto from '@/assets/path.jpg.asset.json'
+import heroGarden from '@/assets/hero-garden.jpg'
+import lawnPhoto from '@/assets/hero.jpg'
+import gardenPhoto from '@/assets/patio.jpg'
+import carePhoto from '@/assets/garden.jpg'
+import plantingPhoto from '@/assets/path.jpg'
 
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
